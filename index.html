@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Magic 8-Ball</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+
+        #container {
+            margin-top: 100px;
+        }
+
+        #magicEightBall {
+            width: 150px;
+            height: 150px;
+            background-color: black;
+            border-radius: 50%;
+            color: white;
+            font-size: 20px;
+            line-height: 150px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <div id="magicEightBall">Click me!</div>
+    </div>
+
+    <script>
+        const answers = [
+            "You right about THAT",
+            "Definitely",
+            "Surely...",
+            "Most likely",
+            "Yes!",
+            "Reply hazy, try again",
+            "Ask again later",
+            "Better not tell you now",
+            "Concentrate and ask again",
+            "Don't bet on it",
+            "My sources say nay",
+            "Doubt it"
+        ];
+
+        const magic8ball = document.getElementById("magicEightBall");
+        const container = document.getElementById("container");
+
+        magic8ball.addEventListener("click", function () {
+            const randomIndex = Math.floor(Math.random() * answers.length);
+            const randomAnswer = answers[randomIndex];
+            magic8ball.textContent = randomAnswer;
+        });
+    </script>
+</body>
+</html>
